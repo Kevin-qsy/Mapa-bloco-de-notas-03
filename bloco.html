@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Bloco de Notas</title>
+  <link rel="stylesheet" href="css/bloco.css">
+
+</head>
+<body>
+
+<h1 id="titulo"></h1>
+<textarea id="editor" placeholder="Escreva aqui..."></textarea>
+<br>
+<button onclick="salvar()">Salvar</button>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const nomeEstrela = params.get('estrela');
+  const nomeBloco = params.get('bloco');
+
+  if (!nomeEstrela || !nomeBloco) {
+    alert('Dados faltando!');
+    window.close();
+  }
+
+  document.getElementById('titulo').innerText = `Editando: ${nomeBloco}`;
+
+  const editor = document.getElementById('editor');
+
+  let blocos = {};
+
+  function carregarBloco() {
+    const dados = JSON.parse(localStorage.getItem('blocos_' + nomeEstrela)) || {};
+    blocos = dados;
+    editor.value = blocos[nomeBloco] || '';
+  }
+
+  function salvar() {
+    blocos[nomeBloco] = editor.value;
+    localStorage.setItem('blocos_' + nomeEstrela, JSON.stringify(blocos));
+    alert('Bloco salvo!');
+  }
+
+  carregarBloco();
+</script>
+
+</body>
+</html>

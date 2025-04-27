@@ -1,0 +1,42 @@
+.home {
+    background-color: blue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Botão */
+  #botao {
+    background-color: black;
+    color: greenyellow;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+  }
+  
+  #botao:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+  }
+  
+  /* Estrelas */
+  .estrela {
+    position: absolute;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    user-select: none;
+  }
+  
