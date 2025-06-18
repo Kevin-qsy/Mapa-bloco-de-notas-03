@@ -1,12 +1,16 @@
-.home {
-    background-color: blue;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-  }
+.home { 
+  background-image: url('../img/stars.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
   
   /* Botão */
   #botao {
@@ -30,12 +34,12 @@
   /* Estrelas */
   .estrela {
     position: absolute;
-    background-color: yellow;
+    background-color: rgb(16, 236, 34);
     padding: 10px;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     user-select: none;
   }

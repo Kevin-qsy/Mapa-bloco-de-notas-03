@@ -18,13 +18,18 @@ function criarEstrela() {
     const nome = prompt("Digite o nome da estrela:");
     if (!nome) return;
 
+    if (estrelas.some(est => est.nome === nome)) {
+        alert("Já existe uma estrela com esse nome.");
+        return;
+    }
+
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
 
     estrelas.push({ nome, x, y });
     salvarEstrelas();
     criarEstrelaNaTela(nome, x, y);
-}
+} 
 
 function criarEstrelaNaTela(nome, x, y) {
     const estrela = document.createElement('div');

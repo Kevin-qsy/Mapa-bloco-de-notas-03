@@ -30,13 +30,12 @@
 /* Estrelas */
 .estrela {
   position: absolute;
-  background-color: yellow;
-  padding: 10px;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  user-select: none;
+  background-color: #222;
+  color: #0ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 0 10px #0ff;
+  display: flex;
+  align-items: center;
 }
-/* Bug de puxar todas as estrelas juntas
