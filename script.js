@@ -72,10 +72,45 @@ function criarEstrelaNaTela(nome, x, y) {
             salvarEstrelas();
         }
     });
+    // Cria botão de renomear
+const botaoRenomear = document.createElement('button');
+botaoRenomear.innerText = '✏️';
+botaoRenomear.style.marginLeft = '5px';
+botaoRenomear.style.cursor = 'pointer';
+botaoRenomear.style.background = 'transparent';
+botaoRenomear.style.border = 'none';
+botaoRenomear.style.color = '#0ff';
+botaoRenomear.style.fontWeight = 'bold';
+
+botaoRenomear.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    const novoNome = prompt(`Renomear estrela "${nome}" para:`);
+    if (!novoNome || novoNome.trim() === '') return;
+    if (estrelas.some(est => est.nome === novoNome)) {
+        alert('Já existe uma estrela com esse nome!');
+        return;
+    }
+
+    // Atualiza no array
+    const index = estrelas.findIndex(est => est.nome === nome);
+    if (index !== -1) {
+        estrelas[index].nome = novoNome;
+        salvarEstrelas();
+    }
+
+    // Atualiza visualmente
+    link.innerText = novoNome;
+    link.href = `estrela.html?nome=${encodeURIComponent(novoNome)}`;
+});
+
     
 
-    estrela.appendChild(link);
-    estrela.appendChild(botaoExcluir);
+   estrela.appendChild(botaoRenomear);
+estrela.appendChild(link);
+estrela.appendChild(botaoExcluir);
+
     document.body.appendChild(estrela);
 
     // Parte de arrastar (mesmo que já corrigimos antes)
