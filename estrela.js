@@ -27,17 +27,23 @@
   }
 
   function atualizarLista() {
-    listaBlocos.innerHTML = '';
+  listaBlocos.innerHTML = '';
 
-    for (let nome in blocos) {
-      const li = document.createElement('li');
-      li.textContent = nome;
-      li.addEventListener('click', function() {
-        abrirBloco(nome);
-      });
-      listaBlocos.appendChild(li);
-    }
+  for (let nome in blocos) {
+    const li = document.createElement('li');
+    li.textContent = nome;
+
+    li.addEventListener('click', function () {
+      abrirBloco(nome);
+      const ativos = listaBlocos.querySelectorAll('.active');
+      ativos.forEach(el => el.classList.remove('active'));
+      li.classList.add('active');
+    });
+
+    listaBlocos.appendChild(li);
   }
+}
+
 
   function criarNovoBloco() {
     const novoNome = prompt('Nome do novo bloco de notas:');

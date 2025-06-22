@@ -1,45 +1,94 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #000022;
-    color: white;
-  }
-  #blocos {
-    list-style: none;
-    padding: 0;
-  }
-  #blocos li {
-    background: #111144;
-    margin: 5px 0;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  #blocos li:hover {
-    background: #3333aa;
-  }
-  textarea {
-    width: 100%;
-    height: 300px;
-    margin-top: 20px;
-    font-size: 16px;
-    background: #111144;
-    color: white;
-    border: none;
-    padding: 10px;
-    resize: none;
-    display: none; /* Inicialmente escondido */
-  }
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #3333aa;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #5555ff;
-  }
-  
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-image: url('../img/mundo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu-luas {
+  width: 300px;
+  background: rgba(10, 10, 50, 0.8);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.menu-luas h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.menu-luas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-luas li {
+  background: #111144;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-luas li:hover {
+  background: #3333aa;
+}
+
+.btn-criar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #00ccff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-criar:hover {
+  background-color: #00ffff;
+}
+
+.planeta-editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+#titulo {
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.dica {
+  font-size: 16px;
+  opacity: 0.7;
+}
+.menu-luas li.active {
+  background: #00ccff;
+  color: black;
+  font-weight: bold;
+}
