@@ -1,5 +1,5 @@
-.home { 
-  background-image: url('../img/stars.png');
+.home {
+  background-image: url('../img/fundo-estrelado.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,36 +11,53 @@
   overflow: hidden;
 }
 
-  
-  /* Botão */
-  #botao {
-    background-color: black;
-    color: greenyellow;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-bottom: 20px;
-  }
-  
-  #botao:hover {
-    background-color: darkgreen;
-    transform: scale(1.05);
-  }
-  
-  /* Estrelas */
-  .estrela {
-    position: absolute;
-    background-color: rgb(16, 236, 34);
-    padding: 10px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    user-select: none;
-  }
-  
+/* Botão principal: Criar nova estrela */
+#botao {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  padding: 14px 28px;
+  border: 1px solid #00ffff;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff70;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 20px;
+}
+
+#botao:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Estrelas */
+.estrela {
+  position: absolute;
+  background-color: rgba(0, 0, 50, 0.5);
+  border: 1px solid #00ffff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 8px #00ffff80;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Botão de excluir (X) */
+.estrela button {
+  background: transparent;
+  border: none;
+  color: #ff5c5c;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
+
+.estrela button:hover {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
