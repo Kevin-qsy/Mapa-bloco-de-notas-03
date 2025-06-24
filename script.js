@@ -6,7 +6,7 @@ function salvarEstrelas() {
 
 function carregarEstrelas() {
     const estrelasSalvas = JSON.parse(localStorage.getItem('estrelas')) || [];
-    estrelas = estrelasSalvas; // <<< Adicionar esta linha para carregar no array também
+    estrelas = estrelasSalvas; 
 
     estrelasSalvas.forEach(dados => {
         criarEstrelaNaTela(dados.nome, dados.x, dados.y);
@@ -113,7 +113,7 @@ estrela.appendChild(botaoExcluir);
 
     document.body.appendChild(estrela);
 
-    // Parte de arrastar (mesmo que já corrigimos antes)
+    // Parte de arrastar 
     let isDragging = false;
     let arrastou = false;
     let offsetX = 0, offsetY = 0;
